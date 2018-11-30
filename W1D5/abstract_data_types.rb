@@ -1,45 +1,53 @@
+
+require "byebug"
 class Stack
     def initialize
       # create ivar to store stack here!
-      @ivar = []
+      @arr_stack = []
     end
 
     def push(el)
       # adds an element to the stack
-      @ivar << el
+      arr_stack << el
     end
 
     def pop
       # removes one element from the stack
-      @ivar.pop
+      arr_stack.pop
     end
 
     def peek
       # returns, but doesn't remove, the top element in the stack
-      @ivar.last
+      arr_stack.last
     end
+
+    private
+    attr_accessor :arr_stack
   end
 
   class Queue
     def initialize
         #create ivar to store queue here!
-        @ivar = []
+        @arr_queue = []
     end
 
     def enqueue(el)
         #adds an element to the queue
-        @ivar << el
+        arr_queue << el
     end
     
     def dequeue
         #removes one elements from the queue
-        @ivar.shift
+        arr_queue.shift
     end
 
     def peek
         #returns, but doesn't remove, the bottom element in the queue
-        @ivar.first
+        arr_queue.first
     end
+
+    private
+    attr_accessor :arr_queue
   end
 
 # Define a Map class with the following instance methods:
@@ -48,21 +56,21 @@ class Stack
 class Map
     def initialize
       # create ivar to store stack here!
-      @ivar = Array.new { Array.new(2) }
+      @arr_map = Array.new { Array.new(2) }
     end
 
     def set(key, value)
       # adds an element to the map
       check_key = key_position(key)
       if check_key.nil?
-        @ivar << [key,value]
+        arr_map << [key,value]
       else
-        @ivar[check_key][1] = value
+        arr_map[check_key][1] = value
       end
     end
 
     def key_position(key)
-      @ivar.each_with_index { |el, i| return i if el[0] == key}
+      arr_map.each_with_index { |el, i| return i if el[0] == key}
       nil
     end
 
@@ -72,21 +80,23 @@ class Map
       if check_key.nil?
         nil
       else
-        @ivar[check_key][1]
+        arr_map[check_key][1]
       end
     end
 
     def delete(key)
+        debugger
       # returns, but doesn't remove, the top element in the stack
-      check_key = key_position(key)
-      unless check_key.nil?
-        @ivar[check_key].delete
-      end
+      arr_map.reject! { |el| el[0] == key }
     end
 
     def show
     # why do they tell us they need this method
     # but not explain what it is supposed to do?
-    p @ivar
+    p arr_map
     end
+
+    private
+    attr_accessor :arr_map
+
   end
