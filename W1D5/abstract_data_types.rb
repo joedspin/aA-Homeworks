@@ -57,7 +57,7 @@ class Map
       if check_key.nil?
         @ivar << [key,value]
       else
-        @ivar[check_key,1] = value
+        @ivar[check_key][1] = value
       end
     end
 
@@ -72,7 +72,7 @@ class Map
       if check_key.nil?
         nil
       else
-        @ivar[check_key, 1]
+        @ivar[check_key][1]
       end
     end
 
