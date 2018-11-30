@@ -19,3 +19,26 @@ class Stack
       @ivar.last
     end
   end
+
+  class Queue
+    def initialize
+        #create ivar to store queue here!
+        @ivar = []
+    end
+
+    def enqueue(el)
+        #adds an element to the queue
+        @ivar << el
+    end
+    
+    def dequeue
+        #removes one elements from the queue
+        @ivar.shift
+    end
+
+    def peek
+        #returns, but doesn't remove, the bottom element in the queue
+        @ivar.first
+    end
+
+  end
