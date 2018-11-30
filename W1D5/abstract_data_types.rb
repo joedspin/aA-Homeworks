@@ -93,7 +93,7 @@ class Map
     def show
     # why do they tell us they need this method
     # but not explain what it is supposed to do?
-    p arr_map
+      arr_map.each { |el| puts el[0].to_s + " => " + el[1].to_s}
     end
 
     private
