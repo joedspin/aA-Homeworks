@@ -1,4 +1,4 @@
-class Person < ApplicationRecord::Base
+class Person < ActivRecord::Base
   validates :name, :house, presence: true
 
   belongs_to :house,
