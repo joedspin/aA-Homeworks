@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   end
 
   def login!(user)
-
-    redirect unless logged_in
+    
+    redirect_to new_login_url unless logged_in?
   end
 
   def logged_in?

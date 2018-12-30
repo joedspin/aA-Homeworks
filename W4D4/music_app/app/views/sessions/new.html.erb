@@ -1,0 +1,21 @@
+<h2>Log In</h2>
+<form action="<%= session_url %>" METHOD="POST">
+  <%= auth_token %>
+  <table>
+    <tr>
+      <td>Email: </td>
+      <td><input type="text" id="get_email" name="user[email]"></td>
+    </tr>
+    <tr>
+      <td>Password: </td>
+      <td><input type="password" id="get_password" name="user[password]"></td>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="Log In"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><h5>Need to create an account? <a href="<%= new_user_url %>">Sign up</a></h5></td>
+    </tr>
+  </table>
+</form>
+

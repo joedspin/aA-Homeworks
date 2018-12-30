@@ -11,7 +11,6 @@
 #
 
 class User < ApplicationRecord
-  inclue BCrypt
 
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, presence: true, uniqueness: true
