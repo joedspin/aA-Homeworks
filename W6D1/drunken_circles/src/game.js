@@ -13,7 +13,7 @@ window.Game = function (xDim, yDim) {
   }
 };
 
-Game.NUM_CIRCLES = 4000;
+Game.NUM_CIRCLES = 40000;
 
 Game.prototype.render = function (ctx) {
   //this will empty the canvas

@@ -27,7 +27,7 @@ Circle.randomColor = function () {
 
 Circle.radius = function (maxX, maxY, numCircles) {
   let targetCircleArea = (maxX * maxY) / numCircles;
-  let targetRadius = Math.sqrt(targetCircleArea / Math.PI);
+  let targetRadius = Math.sqrt(targetCircleArea / Math.PI) + ((Math.random() *2) -1);
   return 2 * targetRadius;
 };
 
